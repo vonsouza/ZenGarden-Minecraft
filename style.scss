@@ -1,0 +1,689 @@
+@import url('https://fonts.googleapis.com/css?family=Creepster&display=swap');
+@import url('https://fonts.google.com/specimen/Barlow');
+@import url('https://fonts.google.com/specimen/Ubuntu+Mono');
+
+$bg-url: 'stive-blue.png';
+$bg-width: 50px;
+$bg-height: 50px;
+$black-color: #080808;
+$white-color: rgb(240, 235, 235);
+$font-title: 'Creepster', cursive;
+$font-side: 'Ubuntu Mono', monospace;
+$font-body: 'Barlow', sans-serif;
+
+/*
+* -> INDEX
+* 1. General
+* 2. First Block (.intro .banner .summary .preamble) 
+* 3. Second Block (.main supporting .explanation .participation .footer...)
+* 4. Third Block (aside .sidebar .complementary .wrapper ...)
+* 5. Animations
+* 6. Responsive
+*/
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin-top: 12rem;
+  color: $black-color;
+  font-family: $font-side;
+  text-align: right;
+  background: url($bg-url) repeat 0 0;
+  
+  -webkit-animation: bg-scrolling-reverse 10.92s infinite; /* Safari 4+ */
+  -moz-animation:    bg-scrolling-reverse 10.92s infinite; /* Fx 5+ */
+  -o-animation:      bg-scrolling-reverse 10.92s infinite; /* Opera 12+ */
+  animation:         bg-scrolling-reverse 10.92s infinite; /* IE 10+ */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function:    linear;
+  -o-animation-timing-function:      linear;
+  animation-timing-function:         linear;
+}
+abbr{
+  text-decoration: none;
+}
+a{
+  text-decoration: none;
+}
+.participation a,
+.requirements a{
+  color: $white-color;
+}
+.summary a{
+  color: $black-color;
+}
+
+/* First Block (.intro .banner .summary .preamble) */
+.intro{
+    text-align: center;
+    font-style: oblique;
+    color: $black-color;
+    font-family: "Sofia", sans-serif;
+    align-items: flex-start;
+    padding: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+    border-radius: 20px;
+}
+
+.summary,
+.preamble {
+  font-family: $font-body;
+  border-style: outset;
+  margin-top: 10px;
+  margin-left: 250px;
+  margin-right: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+.preamble > h3{
+  font-family: $font-title;
+}
+
+/* Second Block (.main supporting .explanation .participation ...) */
+header[role="banner"] h1,
+header[role="banner"] h2 {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  font-family: $font-title;
+}
+header::after{
+  content: " - by Von Souza";
+  font-family: $font-title;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
+#zen-supporting{
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto;
+}
+#zen-supporting .explanation,
+#zen-supporting .participation,
+#zen-supporting .benefits,
+#zen-supporting .requirements {
+  margin-top: 15px;
+}
+
+#zen-supporting > div {
+  font-family: 'Laila', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: large;
+  box-sizing: border-box;
+  margin: 0 20px;
+  float: left;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-size: cover;
+  animation: pulse 2s infinite;
+  align-content: center;
+  text-decoration: none;
+}
+
+#zen-supporting #zen-explanation {
+  background-image: url('face-green.jpg');
+  color: $white-color;
+}
+#zen-supporting #zen-participation {
+  background-image: url('face-blue.jpg');
+  color: $white-color;
+}
+#zen-supporting #zen-requirements {
+  background-image: url('face-red.jpg');
+  color: $white-color;
+}
+#zen-supporting #zen-benefits  {
+  background-image: url('face-white.jpg');
+  color: $black-color
+}
+
+.explanation h3,
+.participation h3,
+.benefits h3,
+.requirements h3{
+  font-weight: bold;
+  text-decoration: underline;
+  transform: scale(1.2);
+}
+
+/*  Third Block (aside .sidebar .complementary .wrapper ...)   */
+aside {
+  float: right;
+  font-style: italic;
+  grid-column: 10 / 13;
+}
+.sidebar{
+  background-color: #ff7a59;
+}
+.design-selection .select,
+.design-archives .archives,
+.zen-resources .resources{
+  text-shadow: #333;
+  text-align: justify;
+  color: $black-color;
+}
+ul {
+  list-style: none;
+}
+ul > li {
+  text-align: left;
+  margin-right: 5px;
+}
+li > a{
+  text-decoration: none;
+  text-justify: auto;
+  color: $black-color;
+}
+
+/*    -- Footer --     */
+footer {
+  background-color: $white-color;
+  font-family: $font-title;
+  display: inline-grid;
+  grid-auto-flow: row;
+  justify-items: center;
+  margin: auto;
+  margin-top: 20px;
+  padding: 6px;
+  grid-column: 1 / 12;
+  font-size: 45px;
+}
+footer::before{
+  content: url("steve-leaving.jpg");
+  border-radius: 1px;
+  animation: wiggle 3s linear infinite;
+}
+footer::after{
+  content: url("creeper-leaving.jpg");
+  animation-delay: 1s;
+  animation: wiggle 3s linear infinite;
+}
+
+@media (min-width: 500px) {
+  footer {
+    grid-auto-flow: column;
+  }
+}
+
+footer > a {
+  color: $black-color;
+  text-decoration: none;
+  box-shadow: inset 0 -1px 0 hsla(0, 0%, 100%, 0.4);
+}
+
+footer > a:hover {
+  box-shadow: inset 0 -1.2em 0 hsla(0, 0%, 41%, 0.4);
+  transform: scale(1.3);
+  fill: black;
+}
+
+/*Grid*/
+.page-wrapper{
+  display: grid;
+  column-gap: 50px;
+  row-gap: 30px;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
+  padding: 10px;
+}
+.main{
+  grid-column: 1 / 9;
+}
+.explanation{
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+.participation{
+  grid-column: 3 / 5;
+  grid-row: 1 / 3;
+}
+.benefits{
+  grid-column: 5 / 7;
+  grid-row: 1 / 3;
+}
+.requirements{
+  grid-column: 7 / 9;
+  grid-row: 1 / 5;
+}
+
+/* ------------------------ Animations ------------------------*/
+.extra2{
+  animation-name: minecraft-name-animation;
+  animation-duration: 2s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function:cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  width: 550px;
+  height: 92px;
+  border-radius: 10px;
+  position: absolute;
+  left: 0; 
+  right: 0; 
+  margin-left: auto;
+  margin-right: auto; 
+  background-image: url('minecraft-name.png');
+}
+
+@keyframes minecraft-name-animation {
+  from {
+    width: 515px;
+    top: 10px;
+  }
+  to {
+    width: 300px;
+    top: 100px;
+  }
+}
+
+@keyframes minecraft-name-animation-xs {
+  from {
+    width: 391px;
+    top: 10px;
+  }
+  to {
+    width: 200px;
+    top: 100px;
+  }
+}
+
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}
+
+@-webkit-keyframes bg-scrolling-reverse {
+  100% { background-position: $bg-width $bg-height; }
+}
+@-moz-keyframes    bg-scrolling-reverse {
+  100% { background-position: $bg-width $bg-height; }
+}
+@-o-keyframes      bg-scrolling-reverse {
+  100% { background-position: $bg-width $bg-height; }
+}
+@keyframes         bg-scrolling-reverse {
+  100% { background-position: $bg-width $bg-height; }
+}
+
+@-webkit-keyframes bg-scrolling {
+  0% { background-position: $bg-width $bg-height; }
+}
+@-moz-keyframes    bg-scrolling {
+  0% { background-position: $bg-width $bg-height; }
+}
+@-o-keyframes      bg-scrolling {
+  0% { background-position: $bg-width $bg-height; }
+}
+@keyframes         bg-scrolling {
+  0% { background-position: $bg-width $bg-height; }
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(244,157,22, 0.4);
+  }
+  70% {
+      -webkit-box-shadow: 0 0 0 20px rgba(244,157,22, 0);
+  }
+  100% {
+      -webkit-box-shadow: 0 0 0 0 rgba(244,157,22, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(85, 74, 84, 0.4);
+    box-shadow: 0 0 0 0 rgba(82, 71, 80, 0.4);
+  }
+  70% {
+      -moz-box-shadow: 0 0 0 20px rgba(244,157,22, 0);
+      box-shadow: 0 0 0 20px rgba(244,157,22, 0);
+  }
+  100% {
+      -moz-box-shadow: 0 0 0 0 rgba(244,157,22, 0);
+      box-shadow: 0 0 0 0 rgba(244,157,22, 0);
+  }
+}
+
+/*  ------------------------ Responsive ------------------------   */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: rgb(100, 238, 8);
+  }
+  /* First Block (.intro .banner .summary .preamble) */
+  .intro{
+    grid-column: 1 / 9;
+    grid-row: 1 / 2;
+    padding: 2px;
+    font-size: smaller;
+    background-image: url('golem-xs.jpg');
+  }
+  .summary,
+  .preamble {
+    margin-left: 140px;
+    margin-right: 5px;
+    border-bottom-right-radius: 10px;
+  }
+  header::after{
+    font-size: smaller;
+  }
+  /* Second Block (.main supporting .explanation .participation ...) */
+  #zen-supporting #zen-explanation {
+    background-image: url('face-green-xs.jpg');
+    color: $white-color;
+  }
+  #zen-supporting #zen-participation {
+    background-image: url('face-blue-xs.jpg');
+    color: $white-color;
+  }
+  #zen-supporting #zen-requirements {
+    background-image: url('face-red-xs.jpg');
+    color: $white-color;
+  }
+  #zen-supporting #zen-benefits  {
+    background-image: url('face-white-xs.jpg');
+    color: $black-color
+  }
+  #zen-supporting .explanation > h3,
+  #zen-supporting .participation  > h3,
+  #zen-supporting .benefits  > h3,
+  #zen-supporting .requirements  > h3 {
+    margin-bottom: 130px;
+  }
+  .explanation{
+    grid-column: 1 / 9;
+    grid-row: 1 / 3;
+  }
+  .participation{
+    grid-column: 1 / 9;
+    grid-row: 3 / 5;
+  }
+  .benefits{
+    grid-column: 1 / 9;
+    grid-row: 5 / 7;
+  }
+  .requirements{
+    grid-column: 1 / 9;
+    grid-row: 7 / 9;
+  }
+  footer {
+    grid-gap: 10px;
+  }
+  .extra2{
+    animation-name: minecraft-name-animation-xs;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function:cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    width: 550px;
+    height: 70px;
+    border-radius: 10px;
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    margin-left: auto;
+    margin-right: auto; 
+    background-image: url('minecraft-name-xs.png');
+  }
+}
+/*Don't display sidebar for devices smaller than 992px*/
+@media only screen and (max-width: 992px) {
+  .sidebar {
+    display: none;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  body {
+    background-color: rgb(28, 121, 48);
+  }
+  /* First Block (.intro .banner .summary .preamble) */
+  .intro{
+    grid-column: 1 / 8;
+    grid-row: 1 / 2;
+    padding: 4px;
+    font-size: small;
+    background-image: url('golem-xs.jpg');
+  }
+  .summary,
+  .preamble {
+    margin-left: 140px;
+    margin-right: 25px;
+  }
+  header::after{
+    font-size: small;
+  }
+  /* Second Block (.main supporting .explanation .participation ...) */
+  .explanation{
+    grid-column: 1 / 9;
+    grid-row: 1 / 3;
+  }
+  .participation{
+    grid-column: 1 / 9;
+    grid-row: 3 / 5;
+  }
+  .benefits{
+    grid-column: 1 / 9;
+    grid-row: 5 / 7;
+  }
+  .requirements{
+    grid-column: 1 / 9;
+    grid-row: 7 / 9;
+  }
+  footer {
+    grid-gap: 18px;
+  }
+  .extra2{
+    animation-name: minecraft-name-animation-xs;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function:cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    width: 550px;
+    height: 70px;
+    border-radius: 10px;
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    margin-left: auto;
+    margin-right: auto; 
+    background-image: url('minecraft-name-xs.png');
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  body {
+    background-color: rgb(236, 232, 10);
+  }
+  /* First Block (.intro .banner .summary .preamble) */
+  .intro{
+    grid-column: 1 / 10;
+    grid-row: 1 / 2;
+    padding: 8px;
+    font-size:medium;
+    background-image: url('golem-md.jpg');
+  }
+  .summary,
+  .preamble {
+    margin-left: 250px;
+    margin-right: 40px;
+  }
+  header::after{
+    font-size: medium;
+  }
+  /* Second Block (.main supporting .explanation .participation ...) */
+  .explanation{
+    grid-column: 1 / 6;
+    grid-row: 1 / 3;
+  }
+  .participation{
+    grid-column: 6 / 10;
+    grid-row: 1 / 3;
+  }
+  .benefits{
+    grid-column: 1 / 6;
+    grid-row: 3 / 5;
+  }
+  .requirements{
+    grid-column: 6 / 10;
+    grid-row: 3 / 5;
+  }
+  #zen-supporting{
+    margin-left: 50px;
+  }
+  footer {
+    grid-gap: 24px;
+  }
+  /*Hover to main elements*/
+  .explanation:hover ,
+  .participation:hover ,
+  .benefits:hover ,
+  .requirements:hover {
+    transform: scale(1.01);
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  body {
+    background-color: rgb(218, 101, 6);
+  }
+  /* First Block (.intro .banner .summary .preamble) */
+  .intro{
+    grid-column: 1 / 11;
+    grid-row: 1 / 2;
+    padding: 8px;
+    font-size: large;
+    background-image: url('golem-md.jpg');
+  }
+  .summary,
+  .preamble {
+    margin-left: 250px;
+    margin-right: 50px;
+  }
+  header::after{
+    font-size: large;
+  }
+  /* Second Block (.main supporting .explanation .participation ...) */
+  .explanation{
+    grid-column: 1 / 5;
+    grid-row: 1 / 3;
+  }
+  .participation{
+    grid-column: 5 / 9;
+    grid-row: 1 / 3;
+  }
+  .benefits{
+    grid-column: 1 / 5;
+    grid-row: 3 / 5;
+  }
+  .requirements{
+    grid-column: 5 / 9;
+    grid-row: 3 / 5;
+  }
+  #zen-supporting{
+    margin-left: 50px;
+  }
+  footer {
+    grid-gap: 24px;
+  }
+  /*Hover to main elements*/
+  .explanation:hover ,
+  .participation:hover ,
+  .benefits:hover ,
+  .requirements:hover {
+    transform: scale(1.01);
+  }
+  /*  Third Block (aside .sidebar .complementary .wrapper ...)   */
+  aside {
+    width: 200px;
+    padding-left: 15px;
+    margin-left: 15px;
+    float: right;
+    font-style: italic;
+    grid-column: 10 / 13;
+    background-image: url("piglin-lg.jpg");
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  body {
+    background-color: rgb(216, 14, 14);
+  }
+  /* First Block (.intro .banner .summary .preamble) */
+  .intro{
+    grid-column: 1 / 13;
+    grid-row: 1 / 2;
+    padding: 12px;
+    font-size: large;
+    background-image: url('golem-xl.jpg');
+  }
+  .summary,
+  .preamble {
+    margin-left: 250px;
+    margin-right: 250px;
+  }
+  header::after{
+    font-size: large;
+  }
+  /* Second Block (.main supporting .explanation .participation ...) */
+  .explanation{
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+  }
+  .participation{
+    grid-column: 3 / 5;
+    grid-row: 1 / 3;
+  }
+  .benefits{
+    grid-column: 5 / 7;
+    grid-row: 1 / 3;
+  }
+  .requirements{
+    grid-column: 7 / 9;
+    grid-row: 1 / 5;
+  }
+  #zen-supporting{
+    margin-left: 50px;
+  }
+  footer {
+    grid-gap: 24px;
+  }
+  /*Hover to main elements*/
+  .explanation:hover ,
+  .participation:hover ,
+  .benefits:hover ,
+  .requirements:hover {
+    transform: scale(1.01);
+  }
+  /*  Third Block (aside .sidebar .complementary .wrapper ...)   */
+  aside {
+    width: 230px;
+    padding-left: 15px;
+    margin-left: 15px;
+    float: right;
+    font-style: italic;
+    grid-column: 10 / 13;
+    background-image: url("piglin-xl.jpg");
+  }
+}
