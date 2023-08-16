@@ -1,5 +1,6 @@
-# ZenGarden-Minecraft
-Advanced CSS - WDD 331R - Winter 2023 Personal Project
+# ZenGarden - theme Minecraft
+ZenGarden is a challenge to style a single page of HTML using only SCSS.
+I demonstrated what can be accomplished through CSS-based design using my son's favorite theme.
 
 # Domain
 https://superlative-lollipop-f13003.netlify.app/
